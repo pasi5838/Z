@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tebak Nama Hewan</title>
+  <link rel="manifest" href="manifest.json" />
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js');
+    }
+  </script>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      background: #fefefe;
+    }
+    #question { font-size: 1.3em; margin: 20px; }
+    #input { padding: 8px; width: 200px; }
+    button { margin: 10px; padding: 10px; }
+    #confetti { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 9999; }
+  </style>
+</head>
+<body>
+  <h1>Tebak Nama Hewan</h1>
+  <div id="question">Memuat soal...</div>
+  <input id="answer" type="text" placeholder="Tulis jawabannya di sini..." />
+  <div>
+    <button onclick="checkAnswer()">Cek Jawaban</button>
+    <button onclick="restartGame()">Restart</button>
+  </div>
+  <canvas id="confetti"></canvas>
+
+  <script src="script.js"></script>
+</body>
+</html>
